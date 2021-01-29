@@ -1,0 +1,19 @@
+18
+create_node 6
+create_node 7
+create_node 6
+delete 1
+delete_node 6
+insert 4 This is sample.
+get 6
+delete 2
+get 1
+insert 3 This is sample.
+delete 4
+delete_node 0
+create_node 2
+delete_node 1
+delete 3
+delete 3
+create_node 7
+delete_node 3

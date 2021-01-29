@@ -1,0 +1,31 @@
+AN IMPLEMENTATION OF DISTRIBUTED HASH TABLE IN C USING THE CHORD ALGORITHM.
+
+Algorithm used: 
+1. When a new node is inserted in the chord ring, the finger table of its own and the other nodes are updated. Along with that, the key-value pairs stored among the other nodes is redistributed so that this node gets the pairs it is responsible for.
+2. When a node is deleted, the finger tables of other nodes are updated and the key-value pairs stored in this node are redistributed among the other nodes.
+3. For inserting, searching or deleting a key-value pair, start from the first node having least number and move on to the node which is responsible for storing the key. The lookup is performed using the finger table of the node. Then perform the necessary operation.
+
+Compiling and executing the code:
+For compiling the code, execute make command.
+For removing object files and executable, execute make clean.
+For running the code, execute the test executable.
+
+Files used in the implementation:
+1. DHT_func.c : Contains the functions for insertion, deletion of a node and insertion, search and deletion of a key-value pair.
+2. main.c : The driver function which will call the functions for insertion/deletion/search for a node/key based on the operation required.
+3. data_structures.h: Header file containing the data structures needed for implementation of DHT. The data structures used are:
+    Node - contains the node number, storage for key-value pairs and the finger table.
+    Finger table - Each entry contains the identifier and the pointer to the node. 
+    Storage - stored in the form of a linked list. Each node has a key and value pair.
+4. functions.h: Header file containing the declaration of various functions implemented in DHT_func.c. 
+5. Makefile - used for compiling the code.
+
+6. operations.c and operations.txt: Used to simulate the various operations on the hashtable. operations.c randomly generates a list of commands to be executed on the hashtable and writes it to operations.txt.   
+    Each line of operations.txt has an operation out of the following:
+    create_node <node_no>
+    delete_node <node_no>
+    insert <key> <value>
+    get <key>
+    delete <key>
+
+    Compile and run operations.c to generate a random order of operations in operations.txt
