@@ -11,7 +11,7 @@ For removing object files and executable, execute make clean.
 For running the code, execute the test executable.
 
 Files used in the implementation:
-1. DHT_func.c : Contains the functions for insertion, deletion of a node and insertion, search and deletion of a key-value pair.
+1. DHT_functions.c : Contains the functions for insertion, deletion of a node and insertion, search and deletion of a key-value pair.
 2. main.c : The driver function which will call the functions for insertion/deletion/search for a node/key based on the operation required.
 3. data_structures.h: Header file containing the data structures needed for implementation of DHT. The data structures used are:
     Node - contains the node number, storage for key-value pairs and the finger table.
